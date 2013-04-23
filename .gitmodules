@@ -3,5 +3,5 @@
     url = https://github.com/puppetlabs/puppetlabs-firewall.git
 
 [submodule "modules/puppetlabs-vcsrepo"]
-    path = modules/puppetlabs-vcsrepo
-    url = https://github.com/puppetlabs/puppetlabs-vcsrepo.git
+	path = modules/puppetlabs-vcsrepo
+	url = https://github.com/puppetlabs/puppetlabs-vcsrepo.git
