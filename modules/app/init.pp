@@ -1,3 +1,3 @@
-class app() {
-  include app::sinatra
+class app {
+  class { app::deploy }
 }
