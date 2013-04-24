@@ -7,6 +7,7 @@ class app::package {
   package { ['sinatra', 'unicorn']:
     ensure => 'installed',
     provider => 'gem',
+    require => Package['rubygems'],
   }
 
 }
