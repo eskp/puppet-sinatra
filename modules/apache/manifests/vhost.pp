@@ -2,7 +2,7 @@ define apache::vhost (
   $port='80',
   $servername='',
   $docroot,
-  $template='apache/vhost.conf.erb',
+  $template='apache/vhost.conf.erb'
 ) {
 
   include apache
