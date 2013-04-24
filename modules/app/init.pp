@@ -1,1 +1,3 @@
-class app {}
+class app {
+  include app::package
+}

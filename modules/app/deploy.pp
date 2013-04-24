@@ -6,10 +6,6 @@ define app::deploy( $address ) {
     ensure   => directory,
   }
 
-  package { 'git':
-    ensure   => installed,
-  }
-
   vcsrepo { ${name}:
     ensure   => latest,
     owner    => 'root',
