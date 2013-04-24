@@ -1,6 +1,6 @@
 class app::package {
 
-  package { ['build-essential', 'ruby', 'rubygems', 'ruby-bundler', 'git']:
+  package { ['build-essential', 'ruby', 'rubygems', 'git']:
     ensure   => installed,
   }
 

@@ -2,8 +2,14 @@ define app::deploy( $address ) {
 
   include app
 
-  file { ["/var/www", "/var/www/${title}/public", "/var/www/${title}/tmp"]:
+  file { "/var/www":
     ensure   => directory,
+  }
+
+  # Apache Passenger requires these two directories
+  file { ["/var/www/${title}/public", "/var/www/${title}/tmp"]:
+    ensure   => directory,
+    require  => Vcsrepo["/var/www/${title}"],
   }
 
   vcsrepo { "/var/www/${title}":
