@@ -1,7 +1,12 @@
 class app::package {
 
-  package { 'git':
+  package { ['build-essential', 'ruby', 'rubygems', 'ruby-bundler', 'git']:
     ensure   => installed,
+  }
+
+  package { ['sinatra', 'unicorn']:
+    ensure => 'installed',
+    provider => 'gem',
   }
 
 }
