@@ -7,12 +7,6 @@ define apache::vhost (
 
   include apache
 
-  if $servername == '' {
-    $srvname = $name
-  } else {
-    $srvname = $servername
-  }
-
   file { "/etc/apache2/sites-enabled/${title}":
     content => template($template),
     owner   => 'root',
