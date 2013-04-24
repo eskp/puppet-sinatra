@@ -2,11 +2,11 @@ define app::deploy( $address ) {
 
   include app
 
-  file { $title:
+  file { "/var/www":
     ensure   => directory,
   }
 
-  vcsrepo { $title:
+  vcsrepo { "/var/www/${title}":
     ensure   => latest,
     owner    => 'root',
     group    => 'root',

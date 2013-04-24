@@ -1,8 +1,8 @@
 class iptables {
 
-  Firewall {
-    notify => Exec['persist-firewall']
-  }
+#  Firewall {
+#    notify => Exec['persist-firewall']
+#  }
 
   firewall { '000 accept input from local':
     iniface => 'lo',
@@ -54,8 +54,8 @@ class iptables {
     action => 'drop',
   }
 
-  exec { 'persist-firewall':
-    command => '/sbin/iptables-save > /etc/firewall.conf',
-    refreshonly => true,
-  }
+#  exec { 'persist-firewall':
+#    command => '/sbin/iptables-save > /etc/firewall.conf',
+#    refreshonly => true,
+#  }
 }
