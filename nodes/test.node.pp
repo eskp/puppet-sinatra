@@ -6,7 +6,7 @@ node default {
   }
 
   apache::vhost { 'simple-sinatra-app.local':
-    docroot => '/var/www/simple-sinatra-app',
+    docroot => '/var/www/simple-sinatra-app/public',
   }
     
 }
