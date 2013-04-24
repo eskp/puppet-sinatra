@@ -1,0 +1,26 @@
+#######################################################################
+#
+# This file is managed by Puppet - any changes made to this file
+# directly will be deleted. Notify sysadmin@ie.com.au for any changes
+#
+#######################################################################
+<VirtualHost *:<%= scope.lookupvar('apache::vhost::port %>>
+        ServerName <%= scope.lookupvar('apache::vhost::name %>
+        DocumentRoot <%= scope.lookupvar('apache::vhost::docroot %>
+        <Directory <%= scope.lookupvar('apache::vhost::docroot %>>
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride All
+                Order allow,deny
+                allow from all
+        </Directory>
+
+        ErrorLog /var/log/apache2/<%= scope.lookupvar('apache::vhost::name %>_error.log
+
+        # Possible values include: debug, info, notice, warn, error, crit,
+        # alert, emerg.
+        LogLevel warn
+
+        CustomLog /var/log/apache2/<%= scope.lookupvar('apache::vhost::name %>_access.log combined
+
+</VirtualHost>
+
