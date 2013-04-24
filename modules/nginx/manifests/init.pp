@@ -1,7 +1,4 @@
 class nginx() inherits nginx::params {
-  include nginx::install
-  include nginx::config
-  include nginx::service
 
   class { 'nginx::install':
     notify => Class['nginx::service'],

@@ -1,3 +1,1 @@
-class app {
-  class { app::deploy }
-}
+class app {}

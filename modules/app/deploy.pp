@@ -1,22 +1,21 @@
-class app::deploy( $docroot, $git_repo ) {
+define app::deploy( $address ) {
 
-  file { ${docroot}:
+  include app
+
+  file { ${name}:
     ensure   => directory,
-    mode     => '0755',
-    require  => Class['nginx::config'],
-    notify   => Exec['git_pull'],
   }
 
   package { 'git':
     ensure   => installed,
   }
 
-  vcsrepo { ${docroot}:
+  vcsrepo { ${name}:
     ensure   => latest,
     owner    => 'root',
     group    => 'root',
     provider => 'git',
-    source   => ${git_repo},
+    source   => ${address},
     revision => 'master',
     require  => Package['git'],
   }
