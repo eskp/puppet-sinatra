@@ -3,6 +3,9 @@ class iptables {
 #  Firewall {
 #    notify => Exec['persist-firewall']
 #  }
+  package { 'iptables-persistent':
+    ensure => installed,
+  }
 
   firewall { '000 accept input from local':
     iniface => 'lo',

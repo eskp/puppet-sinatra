@@ -1,4 +1,4 @@
-node 'ip-10-240-66-194.ap-southeast-2.compute.internal' {
+node default {
   include iptables, nginx, ssh
 
   app::deploy { 'simple-sinatra-app':
