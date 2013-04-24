@@ -2,7 +2,7 @@ define app::deploy( $address ) {
 
   include app
 
-  file { ["/var/www", "/var/www/${title}/public", "/var/www/${title}/tmp":
+  file { ["/var/www", "/var/www/${title}/public", "/var/www/${title}/tmp"]:
     ensure   => directory,
   }
 
