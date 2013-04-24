@@ -12,6 +12,7 @@ define app::deploy( $address ) {
     require  => Vcsrepo["/var/www/${title}"],
   }
 
+  # Use vcsrepo module from Puppet Labs to clone the repository. Exec "git clone" command could also have been used.
   vcsrepo { "/var/www/${title}":
     ensure   => latest,
     owner    => 'root',
