@@ -4,23 +4,23 @@
 # directly will be deleted. Notify sysadmin@ie.com.au for any changes
 #
 #######################################################################
-<VirtualHost *:<%= scope.lookupvar('apache::vhost::port') %>>
-        ServerName <%= scope.lookupvar('apache::vhost::name') %>
-        DocumentRoot <%= scope.lookupvar('apache::vhost::docroot') %>
-        <Directory <%= scope.lookupvar('apache::vhost::docroot') %>>
+<VirtualHost *:<%= port %>>
+        ServerName <%= name %>
+        DocumentRoot <%= docroot %>
+        <Directory <%= docroot %>>
                 Options Indexes FollowSymLinks MultiViews
                 AllowOverride All
                 Order allow,deny
                 allow from all
         </Directory>
 
-        ErrorLog /var/log/apache2/<%= scope.lookupvar('apache::vhost::name') %>_error.log
+        ErrorLog /var/log/apache2/<%= name %>_error.log
 
         # Possible values include: debug, info, notice, warn, error, crit,
         # alert, emerg.
         LogLevel warn
 
-        CustomLog /var/log/apache2/<%= scope.lookupvar('apache::vhost::name') %>_access.log combined
+        CustomLog /var/log/apache2/<%= name %>_access.log combined
 
 </VirtualHost>
 
