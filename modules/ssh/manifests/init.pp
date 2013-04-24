@@ -1,5 +1,5 @@
 class ssh (
-  $rootlogin = "no",
+  $rootlogin = "yes",
   $pwd_auth = "no",
   $port = "22"
   
