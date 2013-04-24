@@ -16,8 +16,5 @@ class nginx::config() inherits nginx::params {
 
     "${nginx::params::conf_dir}/sites-enabled/default":
       ensure  => absent;
-
-    "/var/www":
-      ensure  => directory;
   }
 }

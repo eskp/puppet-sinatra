@@ -2,16 +2,16 @@ define app::deploy( $address ) {
 
   include app
 
-  file { ${title}:
+  file { $title:
     ensure   => directory,
   }
 
-  vcsrepo { ${title}:
+  vcsrepo { $title:
     ensure   => latest,
     owner    => 'root',
     group    => 'root',
     provider => 'git',
-    source   => ${address},
+    source   => $address,
     revision => 'master',
     require  => Package['git'],
   }
